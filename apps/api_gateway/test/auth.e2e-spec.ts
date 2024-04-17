@@ -21,6 +21,10 @@ describe("AuthController (e2e)", () => {
     await app.init();
   });
 
+  afterEach(async () => {
+    await app.close();
+  });
+
   describe("POST /auth/sign-up", () => {
     it("should sign up a new user", () => {
       return request(app.getHttpServer())

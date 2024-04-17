@@ -7,14 +7,14 @@ import { PassportModule } from "@nestjs/passport";
 import { AuthController } from "./auth.controller";
 
 @Module({
-	imports: [
-		PassportModule,
-		JwtModule.register({
-			secret: "secret",
-			signOptions: { expiresIn: "1d" },
-		}),
-	],
-	providers: [AuthService, LocalStrategy, JwtStrategy],
-	controllers: [AuthController],
+  imports: [
+    PassportModule,
+    JwtModule.register({
+      secret: "secret",
+      signOptions: { expiresIn: "1d" },
+    }),
+  ],
+  providers: [AuthService, LocalStrategy, JwtStrategy],
+  controllers: [AuthController],
 })
 export class AuthModule {}
